@@ -10,8 +10,8 @@ const Formulario = () => {
   const [textoBotao, setTextoBotao] = useState('Calcular')
 
   function calcularIMC() {
-    const imc = peso / (altura * altura)
-    setIMC(imc).toFixed(2)
+    const imc = (peso / (altura * altura)).toFixed(2)
+    setIMC(imc)
     if (imc < 18.5) {
       setMenssagemIMC('Abaixo do peso')
     } else if (imc >= 18.5 && imc < 24.9) {
@@ -31,19 +31,23 @@ const Formulario = () => {
     <View>
       {/* criando uma div para os labels e input */}
       <View>
-        <Text>Altura (cm)</Text>
+        <Text>Altura (m)</Text>
         <TextInput
-        placeholder="Ex: 172"
+        placeholder="Ex: 1.72"
         keyboardType="numeric"
+        onChangeText={(altura) => setAltura(altura)}
+        value = {altura}
         />
         <Text>Peso (kg)</Text>
         <TextInput
         placeholder="Ex: 80.5"
         keyboardType="numeric"
+        onChangeText={(peso) => setPeso(peso)}
+        value = {peso}
         />
-        <Button title="Calcular" onPress={() => {}}/>
+        <Button title="Calcular" onPress={() => { calcularIMC()}}/>
       </View>
-      Resultado menssagemResultadoIMC={menssagemIMC} resultadoIMC={IMC}/>
+      <Resultado menssagemResultadoIMC={menssagemIMC} resultadoIMC={IMC}/>
     </View>
   )
 }
