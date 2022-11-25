@@ -7,10 +7,12 @@ const Formulario = () => {
   const [altura, setAltura] = useState('')
   const [menssagemIMC, setMenssagemIMC] = useState('Informe os dados')
   const [IMC, setIMC] = useState(0)
+  // para não aparecer o ZERO use null no useState
+  // const [IMC, setIMC] = useState(null)
   const [textoBotao, setTextoBotao] = useState('Calcular')
 
   function calcularIMC() {
-    const imc = (peso / (altura * altura)).toFixed(2)
+    const imc = (peso / (altura * altura)).toFixed(2) 
     setIMC(imc)
     if (imc < 18.5) {
       setMenssagemIMC('Abaixo do peso')
