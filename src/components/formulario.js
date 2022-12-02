@@ -5,7 +5,7 @@ import Resultado from './resultado'
 const Formulario = () => {
   const [peso, setPeso] = useState('')
   const [altura, setAltura] = useState('')
-  const [menssagemIMC, setMenssagemIMC] = useState('Informe os dados')
+  const [mensagemIMC, setMensagemIMC] = useState('Informe os dados')
   const [IMC, setIMC] = useState(0)
   // para não aparecer o ZERO use null no useState
   // const [IMC, setIMC] = useState(null)
@@ -15,17 +15,17 @@ const Formulario = () => {
     const imc = (peso / (altura * altura)).toFixed(2) 
     setIMC(imc)
     if (imc < 18.5) {
-      setMenssagemIMC('Abaixo do peso')
+      setMensagemIMC('Abaixo do peso')
     } else if (imc >= 18.5 && imc < 24.9) {
-      setMenssagemIMC('Peso normal')
+      setMensagemIMC('Peso normal')
     } else if (imc >= 25 && imc < 29.9) {
-      setMenssagemIMC('Sobrepeso')
+      setMensagemIMC('Sobrepeso')
     } else if (imc >= 30 && imc < 34.9) {
-      setMenssagemIMC('Obesidade grau 1')
+      setMensagemIMC('Obesidade grau 1')
     } else if (imc >= 35 && imc < 39.9) {
-      setMenssagemIMC('Obesidade grau 2')
+      setMensagemIMC('Obesidade grau 2')
     } else if (imc >= 40) {
-      setMenssagemIMC('Obesidade grau 3')
+      setMensagemIMC('Obesidade grau 3')
     }
   }
 
@@ -49,7 +49,7 @@ const Formulario = () => {
         />
         <Button title="Calcular" onPress={() => { calcularIMC()}}/>
       </View>
-      <Resultado menssagemResultadoIMC={menssagemIMC} resultadoIMC={IMC}/>
+      <Resultado mensagemResultadoIMC={mensagemIMC} resultadoIMC={IMC}/>
     </View>
   )
 }

@@ -4,7 +4,7 @@ import React from 'react'
 const Resultado = (valores) => {
   return (
     <View>
-      <Text>{valores.menssagemResultadoIMC}</Text>
+      <Text>{valores.mensagemResultadoIMC}</Text>
       <Text>{valores.resultadoIMC}</Text>      
     </View>
   )
