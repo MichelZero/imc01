@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View } from 'react-native' 
 import React from 'react'
 
 const Titulo = () => {
@@ -9,7 +9,7 @@ const Titulo = () => {
   )
 }
 
-export default Titulo
+export default Titulo 
 
 const styles = StyleSheet.create({
   fonteBlue: {
