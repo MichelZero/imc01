@@ -47,7 +47,7 @@ const Formulario = () => {
         onChangeText={(peso) => setPeso(peso)}
         value = {peso}
         />
-        <Button title="Calcular" onPress={() => { calcularIMC()}}/>
+        <Button style={styles.botaoBlue} title="Calcular" onPress={() => { calcularIMC()}}/>
       </View>
       <Resultado mensagemResultadoIMC={mensagemIMC} resultadoIMC={IMC}/>
     </View>
@@ -56,4 +56,10 @@ const Formulario = () => {
 
 export default Formulario
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  botaoBlue: {
+    color: 'blue',
+    fontWeight: 'bold',
+    fontSize: 30,
+  },
+})
